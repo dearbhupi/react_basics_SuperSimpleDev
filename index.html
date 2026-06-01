@@ -16,10 +16,14 @@
 
 
       const button = <button>Click me</button>;
+      const paragraph = <p>This is a paragraph</p>;
 
       const container = document.querySelector(".js-container");
       ReactDOM.createRoot(container).render(
-        button
+        <div>
+          {button}
+          {paragraph}
+        </div>
       );
     </script>
   </body>
