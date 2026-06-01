@@ -16,19 +16,18 @@
 
       function ChatInput(){
         return (
-          <div>
+          <>
             <input type="text" placeholder="Type your message here..." />
             <button>Send</button>
-          </div>
+          </>
         )
       }
 
       const divElement = (
-        <div>
+        <>
           <h1>Welcome to the Chatbot!</h1>
-          {ChatInput()}
           <ChatInput />
-        </div>
+        </>
       );
   
 
