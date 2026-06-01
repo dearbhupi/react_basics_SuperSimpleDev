@@ -13,22 +13,27 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      const divElement = (
-        <div>
-          <button>Click me</button>
-          <p>This is a paragraph </p>
-           <button> Great Job! </button>
-           <p> My name is Bhupinder Singh </p>
+      const container = document.querySelector(".js-container");
+      const root = ReactDOM.createRoot(container);
+
+      setInterval(() => {
+        const currentTime = new Date().toLocaleTimeString();
+
+        const divElement = (
+          <div>
+            <h1>Current Time: {currentTime}</h1>
+            <button>Click me</button>
+            <p>This is a paragraph </p>
+            <button> Great Job! </button>
+            <p> My name is Bhupinder Singh </p>
             <p>Cotton socks </p>
             <p>Price: ${3 + 3} </p>
             <button>Add to Cart</button>
-            
+          </div>
+        );
 
-        </div>
-      )
-
-      const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(divElement);
+        root.render(divElement);
+      }, 1000);
     </script>
   </body>
 </html>
