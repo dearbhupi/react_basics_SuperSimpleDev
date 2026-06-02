@@ -1,0 +1,92 @@
+cat > ~/Library/Application\ Support/Code/User/settings.json << 'EOF'
+{
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "explorer.confirmDelete": false,
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "workbench.iconTheme": "vscode-icons",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "variable.other",
+                    "variable.declaration"
+                ],
+                "settings": {
+                    "foreground": "#FF5555",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "variable.parameter",
+                    "variable.other.object"
+                ],
+                "settings": {
+                    "foreground": "#FFB86C",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "variable.other.property",
+                    "meta.property.object"
+                ],
+                "settings": {
+                    "foreground": "#8BE9FD",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.type",
+                    "storage.type",
+                    "support.type"
+                ],
+                "settings": {
+                    "foreground": "#50FA7B",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "constant.numeric",
+                    "constant.language"
+                ],
+                "settings": {
+                    "foreground": "#BD93F9",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "string",
+                    "string.quoted"
+                ],
+                "settings": {
+                    "foreground": "#F1FA8C",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.function"
+                ],
+                "settings": {
+                    "foreground": "#50FA7B",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
+}
+EOF
