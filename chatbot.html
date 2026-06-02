@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
+      // Step 1: Create top level component for chatbot application
       function ChatInput() {
         return (
           <>
@@ -23,7 +24,7 @@
           </>
         );
       }
-
+      // Step 2: Create a component for chatbot profile
       function ChatProfile({ message, profile }) {
         return (
           <div>
@@ -38,24 +39,42 @@
         );
       }
 
+      // Step 3: Create the main App component
       function App() {
+        // create an array of chat messages with profile information
+        const chatData = [
+          { message: "Hello Chatbot", profile: "user" },
+          { message: "Hello! How can I help you?", profile: "robot" },
+          { message: "Can you get me todays date?", profile: "user" },
+          { message: "Today is June 1", profile: "robot" },
+          { message: "Flip a coin", profile: "user" },
+          { message: " Sure! You got heads", profile: "robot" },
+          
+        ];
+
+        const chatMappedData = chatData.map((newChatMessage) => {
+          return (
+            <ChatProfile
+              key={newChatMessage.message}
+              message={newChatMessage.message}
+              profile={newChatMessage.profile}
+            />
+          );
+
+        });
+       
         return (
           <>
-            <h1>Welcome to the Chatbot!</h1>
+
             <ChatInput />
-            <ChatProfile message="Hello Chatbot" profile="user" />
-            <ChatProfile message=" Hello! How can I help you?" profile="robot" />
-            <ChatProfile message=" can you get me todays date?" profile="user" />
-            <ChatProfile message=" Today is June 1" profile="robot" />
-            <ChatProfile message=" flip a coin" profile="user" />
-            <ChatProfile message=" Sure! You got heads" profile="robot" />
+             {chatMappedData}
           </>
         );
       }
-   
 
       const container = document.querySelector(".js-container");
       ReactDOM.createRoot(container).render(<App />);
+      
     </script>
   </body>
 </html>
