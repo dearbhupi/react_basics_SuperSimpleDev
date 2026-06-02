@@ -43,19 +43,19 @@
       function App() {
         // create an array of chat messages with profile information
         const chatData = [
-          { message: "Hello Chatbot", profile: "user" },
-          { message: "Hello! How can I help you?", profile: "robot" },
-          { message: "Can you get me todays date?", profile: "user" },
-          { message: "Today is June 1", profile: "robot" },
-          { message: "Flip a coin", profile: "user" },
-          { message: " Sure! You got heads", profile: "robot" },
+           {message: "Hello Chatbot", profile: "user", id:UUID() },
+          { message: "Hello! How can I help you?", profile: "robot",  id:UUID() },
+          { message: "Can you get me todays date?", profile: "user", id:UUID() },
+          { message: "Today is June 1", profile: "robot", id:UUID() },
+          { message: "Flip a coin", profile: "user", id:UUID() },
+          { message: " Sure! You got heads", profile: "robot", id:UUID() },
           
         ];
 
         const chatMappedData = chatData.map((newChatMessage) => {
           return (
             <ChatProfile
-              key={newChatMessage.message}
+              key={newChatMessage.id}
               message={newChatMessage.message}
               profile={newChatMessage.profile}
             />
