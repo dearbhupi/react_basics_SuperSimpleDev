@@ -26,31 +26,28 @@
         );
       }
 
-      function ChatProfile(props) {
-        const msg = props.message;
-        const profile = props.profile;
-        if (profile === "robot") {
-          return (
-            <div>
-              <img
-                src="robot.png"
-                alt="Chatbot Profile"
-                width="50"
-                height="50"
-              ></img>
-              {msg}
-            </div>
-          );
-        }
+      function ChatProfile({message , profile} ) {
+        // const message  = props.message;
+        // const profile = props.profile;
+        // const {message , profile} = props;
+        // if (profile === "robot") {
+        //   return (
+        //     <div>
+        //       <img
+        //         src="robot.png"
+        //         alt="Chatbot Profile"
+        //         width="50"
+        //         height="50"
+        //       ></img>
+        //       {message }
+        //     </div>
+        //   );
+        // }
         return (
           <div>
-            {msg}
-            <img
-              src="user.png"
-              alt="Chatbot Profile"
-              width="50"
-              height="50"
-            ></img>
+            { profile === "robot" && <img src="robot.png" width="50" height="50" ></img>}
+            {message }
+            { profile === "user" && <img src="user.png" width="50" height="50" ></img> }
           </div>
         );
       }
