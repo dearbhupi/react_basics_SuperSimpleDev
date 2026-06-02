@@ -7,10 +7,8 @@
     <div class="js-container"></div>
 
     <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
-
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
-
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
       function ChatInput() {
@@ -26,47 +24,38 @@
         );
       }
 
-      function ChatProfile({message , profile} ) {
-        // const message  = props.message;
-        // const profile = props.profile;
-        // const {message , profile} = props;
-        // if (profile === "robot") {
-        //   return (
-        //     <div>
-        //       <img
-        //         src="robot.png"
-        //         alt="Chatbot Profile"
-        //         width="50"
-        //         height="50"
-        //       ></img>
-        //       {message }
-        //     </div>
-        //   );
-        // }
+      function ChatProfile({ message, profile }) {
         return (
           <div>
-            { profile === "robot" && <img src="robot.png" width="50" height="50" ></img>}
-            {message }
-            { profile === "user" && <img src="user.png" width="50" height="50" ></img> }
+            {profile === "robot" && (
+              <img src="robot.png" width="50" height="50"></img>
+            )}
+            {message}
+            {profile === "user" && (
+              <img src="user.png" width="50" height="50"></img>
+            )}
           </div>
         );
       }
 
-      const app = (
-        <>
-          <h1>Welcome to the Chatbot!</h1>
-          <ChatInput />
-          <ChatProfile message="Hello Chatbot" profile="user" />
-          <ChatProfile message=" Hello! How can I help you?" profile="robot" />
-          <ChatProfile message=" can you get me todays date?" profile="user" />
-          <ChatProfile message=" Today is June 1" profile="robot" />
-          <ChatProfile message=" flip a coin" profile="user" />
-          <ChatProfile message=" Sure! You got heads" profile="robot" />
-        </>
-      );
+      function App() {
+        return (
+          <>
+            <h1>Welcome to the Chatbot!</h1>
+            <ChatInput />
+            <ChatProfile message="Hello Chatbot" profile="user" />
+            <ChatProfile message=" Hello! How can I help you?" profile="robot" />
+            <ChatProfile message=" can you get me todays date?" profile="user" />
+            <ChatProfile message=" Today is June 1" profile="robot" />
+            <ChatProfile message=" flip a coin" profile="user" />
+            <ChatProfile message=" Sure! You got heads" profile="robot" />
+          </>
+        );
+      }
+   
 
       const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(app);
+      ReactDOM.createRoot(container).render(<App />);
     </script>
   </body>
 </html>
